@@ -3,7 +3,7 @@ provider "aws" {
 }
 
 data "aws_vpc" "existing_vpc" {
-  id = "vpc-07e3518f2655e2254"
+  id = "vpc-0e9c8f1571a95e577"
 }
 
 resource "aws_subnet" "example_subnet" {
@@ -23,4 +23,5 @@ resource "aws_internet_gateway" "gw" {
     Name = "datasource-Terraform-internet-gateway"
   }
 }
+
 
