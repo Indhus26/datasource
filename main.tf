@@ -1,15 +1,15 @@
 provider "aws" {
-  region = "ap-south-1"
+  region = "us-east-1"
 }
 
 data "aws_vpc" "existing_vpc" {
-  id = "vpc-048f4f3fdf4148928"
+  id = "vpc-07e3518f2655e2254"
 }
 
 resource "aws_subnet" "example_subnet" {
   vpc_id            = data.aws_vpc.existing_vpc.id
   cidr_block        = "10.0.1.0/24"
-  availability_zone = "ap-south-1a"
+  availability_zone = "us-east-1a"
 
   tags = {
     Name = "Example-Subnet"
@@ -23,3 +23,4 @@ resource "aws_internet_gateway" "gw" {
     Name = "datasource-Terraform-internet-gateway"
   }
 }
+
